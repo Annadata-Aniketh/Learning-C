@@ -1,46 +1,74 @@
-⚙️ C Programming Full Course - Comprehensive Guide
+C Programming Full Course
 
-Welcome to the ultimate reference guide for C Programming, based on Bro Code's full tutorial. This repository acts as a detailed encyclopedia of C syntax, paradigms, and memory management concepts, skipping the IDE setup and diving straight into the code.
+Description
 
-📖 Table of Contents
+This repository acts as a detailed encyclopedia of C syntax, paradigms, and memory management concepts based on Bro Code's full tutorial. It is designed to help users and developers understand the foundational building blocks of C programming, skipping the basic IDE setup and diving straight into the core code.
 
-Variables
+Table of Contents
 
-Format Specifiers
+Installation
 
-Arithmetic Operators
+Usage (Core Concepts)
 
-User Input
+1. Variables
 
-Math Functions
+2. Format Specifiers
 
-If Statements & Switches
+3. Arithmetic Operators
 
-Logical Operators
+4. User Input
 
-Functions, Return & Variable Scope
+5. Math Functions
 
-Loops (While, For, Nested)
+6. If Statements & Switches
 
-Break & Continue
+7. Logical Operators
 
-Random Numbers
+8. Functions, Return & Variable Scope
 
-Arrays (1D, 2D, & Strings)
+9. Loops (While, For, Nested)
 
-Ternary Operator
+10. Break & Continue
 
-Typedef & Enums
+11. Random Numbers
 
-Structs & Arrays of Structs
+12. Arrays (1D, 2D, & Strings)
 
-Pointers
+13. Ternary Operator
 
-File I/O (Read & Write)
+14. Typedef & Enums
 
-Dynamic Memory (malloc, calloc, realloc)
+15. Structs & Arrays of Structs
 
-Course Projects Directory
+16. Pointers
+
+17. File I/O (Read & Write)
+
+18. Dynamic Memory (malloc, calloc, realloc)
+
+Course Projects
+
+Contributing
+
+License
+
+Contact
+
+Installation
+
+Install a C compiler (like GCC for Windows/Linux, or Clang for macOS).
+
+Clone this repository to your local machine.
+
+Open the repository in your preferred IDE (such as VS Code) and ensure you have a C/C++ extension installed.
+
+To compile any file, open your terminal and run gcc filename.c -o outputname.
+
+Run the compiled program using ./outputname (or outputname.exe on Windows).
+
+Usage (Core Concepts)
+
+Here are the usage examples showing how to implement the core features of the C programming language.
 
 1. Variables
 
@@ -100,7 +128,6 @@ Augmented Assignment: x += 2, x -= 2, x *= 2, x /= 2.
 4. User Input
 
 scanf (For singular words or numbers)
-
 Reads formatted input. Requires the address-of operator (&) for primitive data types.
 
 int age;
@@ -108,10 +135,9 @@ printf("Enter your age: ");
 scanf("%d", &age); // Inserts value at the memory address of 'age'
 
 
-Trap: scanf leaves a newline character (\n) in the input buffer. When reading a character after a number, clear the buffer by adding a space before %c: scanf(" %c", &grade);
+Note: scanf leaves a newline character (\n) in the input buffer. When reading a character after a number, clear the buffer by adding a space before %c: scanf(" %c", &grade);
 
 fgets (For strings with spaces)
-
 Unlike scanf, fgets reads entire lines of text including whitespace.
 
 #include <string.h>
@@ -147,7 +173,6 @@ sin(x), cos(x), tan(x): Trigonometry (values in radians)
 6. If Statements & Switches
 
 Nested If Statements
-
 Allows for basic decision-making branches based on conditions evaluating to true or false.
 
 if (age >= 18) {
@@ -160,7 +185,6 @@ if (age >= 18) {
 
 
 Switches
-
 A cleaner and more efficient alternative to long else if chains when checking one variable against multiple fixed integers or characters.
 
 switch(grade) {
@@ -202,7 +226,7 @@ int square(int number);
 
 int main() {
     int result = square(5); // Sending an "Argument"
-    return 0; // Return 0 = Success. Returning 1 = Error exit code.
+    return 0; // Return 0 = Success.
 }
 
 // Definition
@@ -217,7 +241,7 @@ while Loop: Repeats code as long as the condition remains true. Checked at the s
 
 do-while Loop: Executes the code block at least once, and checks the condition at the end.
 
-for Loop: Ideal for executing code a limited/known number of times. Structure: for(initialization; condition; update)
+for Loop: Ideal for executing code a limited/known number of times. Structure: for(initialization; condition; update).
 
 Nested Loops: A loop inside a loop (e.g., an outer loop for rows, an inner loop for columns).
 
@@ -258,10 +282,7 @@ prices[0] = 15; // Reassign index 0
 int size = sizeof(prices) / sizeof(prices[0]); 
 
 
-Tip: If you declare an array without initializing its values, it holds "garbage" data. Clear it by initializing to zero: int scores[5] = {0};
-
 2D Arrays (Matrices)
-
 An array of arrays. Requires defining the maximum number of columns.
 
 int matrix[2][3] = {
@@ -271,7 +292,6 @@ int matrix[2][3] = {
 
 
 Arrays of Strings
-
 Because a string is a 1D array of characters, an array of strings is technically a 2D array of characters.
 
 // Holds 3 strings, each with a max of 20 characters
@@ -281,6 +301,7 @@ char cars[3][20] = {"Mustang", "Corvette", "Camaro"};
 13. Ternary Operator
 
 A shorthand if/else statement.
+
 Syntax: (condition) ? return_if_true : return_if_false;
 
 int max = (x > y) ? x : y;
@@ -290,7 +311,6 @@ printf("%s", (isOnline) ? "Online" : "Offline");
 14. Typedef & Enums
 
 Typedef
-
 Assigns a nickname to an existing data type to simplify complex types or increase readability.
 
 typedef char String[50]; // Creates a 'String' alias
@@ -298,7 +318,6 @@ String name = "Bro Code";
 
 
 Enums (Enumerations)
-
 Creates a user-defined data type representing a set of named integer constants. Great for readability.
 
 enum Status {SUCCESS = 0, FAILURE = 1, PENDING = 2};
@@ -308,7 +327,6 @@ enum Status currentStatus = SUCCESS;
 15. Structs & Arrays of Structs
 
 Structs
-
 A blueprint for custom containers that hold multiple pieces of related information (C's closest relative to Objects in OOP).
 
 typedef struct {
@@ -322,7 +340,6 @@ printf("%s has a %.2f GPA", s1.name, s1.gpa); // Access via dot operator (.)
 
 
 Arrays of Structs
-
 Group multiple struct instances into an array to cycle through them programmatically.
 
 Student classRoster[] = {s1, s2, s3};
@@ -381,7 +398,7 @@ calloc(elements, size): Dynamically allocates memory and automatically zeroes ou
 
 realloc(pointer, new_size): Resizes previously allocated memory block, keeping existing data intact.
 
-CRITICAL: Allocated memory is like a rented apartment. When you're done, you MUST return it to the operating system using free(), and reset the pointer to NULL to avoid dangling pointers and segmentation faults.
+Note: Allocated memory is like a rented apartment. When you're done, you MUST return it to the operating system using free(), and reset the pointer to NULL to avoid dangling pointers and segmentation faults.
 
 #include <stdlib.h>
 
@@ -398,34 +415,44 @@ free(scores);
 scores = NULL; // Prevent a dangling pointer
 
 
-19. Course Projects Directory
+Course Projects
 
 Throughout the curriculum, all concepts are applied in hands-on practice projects. Below is the mapped project repository structure generated during this course:
 
-📁 Banking_program (Banking_program.c)
+Banking_program (Banking_program.c)
 
-📁 Calculator (Calculator.c)
+Calculator (Calculator.c)
 
-📁 circle_calculator (circle_calculator.c)
+circle_calculator (circle_calculator.c)
 
-📁 compound_interest (compound_interest.c)
+compound_interest (compound_interest.c)
 
-📁 Digital_clock (Digital_clock.c)
+Digital_clock (Digital_clock.c)
 
-📁 Happy_new_year_countdown (Happy_new_year_countdown.c)
+Happy_new_year_countdown (Happy_new_year_countdown.c)
 
-📄 Madlibs_game.c
+Madlibs_game.c
 
-📁 Number_Guessing_game (Number_Guessing_game.c)
+Number_Guessing_game (Number_Guessing_game.c)
 
-📁 Quiz_game (Quiz_game.c)
+Quiz_game (Quiz_game.c)
 
-📁 Rock_paper-scissors_game (Rock_paper-scissors_game.c)
+Rock_paper-scissors_game (Rock_paper-scissors_game.c)
 
-📄 Shopping_cart.c
+Shopping_cart.c
 
-📁 temperature_converter (temperature_converter.c)
+temperature_converter (temperature_converter.c)
 
-📁 weight_converter (weight_converter.c)
+weight_converter (weight_converter.c)
 
-Generated based on Bro Code's Comprehensive C Programming Video Course.
+Contributing
+
+Feel free to submit pull requests or open issues if you find any errors or wish to add more examples and improvements to the guide.
+
+License
+
+MIT License
+
+Contact
+
+Maintainer Email: example@domain.com
